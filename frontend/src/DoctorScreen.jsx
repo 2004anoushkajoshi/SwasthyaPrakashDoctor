@@ -1,6 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./DoctorScreen.css";
 import jsPDF from "jspdf";
+import { nodeAPI, flaskAPI } from "./services/apiService.js";
+
+// Example: Node backend request
+async function getPatientData() {
+  try {
+    const response = await nodeAPI.get("/api/patients");
+    console.log("Node Response:", response.data);
+  } catch (error) {
+    console.error("Error fetching from Node:", error);
+  }
+}
+
+// Example: Flask backend request
+async function analyzeReport(data) {
+  try {
+    const response = await flaskAPI.post("/analyze", data);
+    console.log("Flask Response:", response.data);
+  } catch (error) {
+    console.error("Error fetching from Flask:", error);
+  }
+}
 
 export default function DoctorScreen() {
   // Existing states
