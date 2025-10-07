@@ -18,6 +18,9 @@
     "react-dom": "^19.1.1",
     "vite": "^7.1.7"
   },
+  "engines": {
+  "node": "22.x"
+  },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@types/react": "^19.1.16",
